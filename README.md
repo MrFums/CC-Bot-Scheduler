@@ -38,7 +38,7 @@ This is a Python-based Discord bot that automates certain actions for CC. The bo
 
 4. **Create a Discord Bot and Grab the Token:**
 
-Follow the guide here to create a Discord bot and grab the token.
+Follow the guide here: https://discordpy.readthedocs.io/en/stable/discord.html to create a Discord bot and grab the token.
 Replace your_token_here in the config.ini file with the token you obtained.
 
 ## Usage
