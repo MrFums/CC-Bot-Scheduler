@@ -60,6 +60,7 @@ Replace your_token_here in the config.ini file with the token you obtained.
    - `++start`: Manually send the F1 command.
    - `++pr`: Pause or resume the bot.
    - `++terminate`: Terminate the bot.
+   - `++killgfn`: Kills GFN processes.
 
 4. **Disclaimer**:
    - You require to manually open CC and leave it setup. I would highly advise you set it up to return to character at cycler position 0 once it is complete to allow this script to seamlessly work.
