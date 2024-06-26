@@ -51,9 +51,7 @@ helpContent = '''
 ++uptime - reports the uptime of the HOST MACHINE and also the hostname the bot is running on
 ++start - starts the bot (presses f1)
 ++pr - pause / resume the bot (presses f5)
-++terminate - terminates the bot (presses f3)
-++killgfn - kills all GFN processes
-```
+++terminate - terminates the bot (presses f3)```
 '''
 
 # Configuration setup
@@ -84,7 +82,7 @@ def killGFN():
         elif 'GeForceNOWContainer.exe' in process.info['name']:
             logging.info(f"Killing GeForce Now Container process with PID {process.info['pid']}")
             process.kill()
-    time.sleep(10)
+    time.sleep(1)
     return
 
 # Function to send F1 key command
@@ -176,6 +174,7 @@ async def on_message(message):
         logging.info(f'Uptime is {uptime}')
 
     if message.content.startswith('++start'):
+        killGFN()
         pydirectinput.press('f1')
         await message.channel.send(f'Starting bot')
         logging.info('Starting bot')
@@ -193,14 +192,6 @@ async def on_message(message):
     if message.content.startswith('++help'):
         await message.channel.send(helpContent)
         logging.info('Help')
-
-    if message.content.startswith('++killgfn'):
-        await message.channel.send(f'Killing GFN')
-        killGFN()
-        await message.channel.send(f'Killed GFN')
-        logging.info('Killed GFN processes')
-
-        
 
 # Run the Discord client with error handling
 try:
